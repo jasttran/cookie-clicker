@@ -23,10 +23,12 @@ const Cookie = () => {
 
   return (
     <div className='cookie-container'>
-      <h1>CLICK ME</h1>
+        <div className='click-me'>
+            <h1>CLICK ME</h1>
+        </div>  
       <div className='cookie-image'>
         <IconButton disableRipple="true" onClick={incrementCount}>
-            <img src={ChocChip} />
+            <img draggable={false} src={ChocChip} />
         </IconButton>
       </div>
       <h1>$ {money}</h1>

@@ -1,9 +1,15 @@
 .cookie-container {
     text-align: center;
-    padding-top: 100px;
+    padding: 100px;
 }
 
 .cookie-container img {
     width: 50%;
     height: 50%;
+}
+
+.click-me {
+    background-color: rgb(60, 154, 180);
+    color: white;
+    padding: 5px;
 }
