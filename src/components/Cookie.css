@@ -6,13 +6,7 @@
 .cookie-container img {
     width: 50%;
     height: 50%;
-}
-
-.click-me {
-    background-color: rgb(60, 154, 180);
-    color: white;
-    padding: 5px;
-}
+} 
 
 .cookie-image {
     animation: cookie-image-spin infinite 17s linear;

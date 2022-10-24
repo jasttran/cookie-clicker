@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.navbar {
+    background-color: rgb(51, 16, 1);
+    color: rgb(252, 238, 221);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6rem;
+} 
+
+.navbar a{
+    color: inherit;
+    text-decoration: none;
+    padding: 1rem;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.kookie {
+    font-size: 2rem;
+}
+
+.navbar li:hover {
+    color: rgb(255, 239, 146);
+}
