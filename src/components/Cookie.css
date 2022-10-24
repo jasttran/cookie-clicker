@@ -13,3 +13,16 @@
     color: white;
     padding: 5px;
 }
+
+.cookie-image {
+    animation: cookie-image-spin infinite 17s linear;
+}
+
+@keyframes cookie-image-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

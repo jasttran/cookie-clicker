@@ -1,4 +1,4 @@
-import CookieIcon from '@mui/icons-material/Cookie';
+
 import IconButton from '@mui/material/IconButton';
 import ChocChip from '../images/choc-chip.png'
 import './Cookie.css';
