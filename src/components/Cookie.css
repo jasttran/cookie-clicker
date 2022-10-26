@@ -10,7 +10,11 @@
 
 .cookie-image {
     animation: cookie-image-spin infinite 17s linear;
+    filter: drop-shadow(0 0 5rem rgb(227, 214, 44));
+
 }
+
+
 
 @keyframes cookie-image-spin {
     from {
