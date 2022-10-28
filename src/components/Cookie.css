@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .cookie-image img {
@@ -39,4 +40,28 @@
 .text-description {
     font-size: 25px;
     padding-left: 6px;
+}
+
+
+.pointer-image img {
+    width: 10%;
+    height: 10%;
+    transform: rotate(90deg);
+}
+
+.pointer-image {
+    position: absolute;
+    left: 39%;
+    top: 67%;
+    /*animation: point-at-cookie infinite 1s linear;
+    animation-delay: 10s;*/
+}
+
+@keyframes point-at-cookie {
+    0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(50px, -50px);
+	}
 }

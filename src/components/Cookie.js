@@ -3,10 +3,12 @@ import IconButton from '@mui/material/IconButton';
 import ChocChip from '../images/choc-chip.png'
 import './Cookie.css';
 import { useState } from 'react';
+import PointerImage from '../images/pointer.png';
+
 
 const Cookie = () => {
     const [money, setMoney] = useState(0);
-    const [increment, setIncrement] = useState(1)
+    const [increment, setIncrement] = useState(99999999999999999999999)
     const [priceIncrement, setPriceIncrement] = useState(10)
 
     function incrementCount() {
@@ -36,7 +38,9 @@ const Cookie = () => {
             </IconButton>
           </div>
         </div>
+        <div className="pointer-image"><img draggable={false} src={PointerImage} /></div>
       </div>
+
       <h1>$ {money}</h1>
 
       <button onClick={increaseIncrement}>${priceIncrement} to Increase to ${increment + 1} per click</button>
