@@ -1,22 +1,41 @@
 .cookie-container {
     margin: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    height: 45vh;
 }
-
-.cookie-image img {
-    width: 50%;
-    height: 50%;
-} 
 
 .cookie-image {
-    animation: cookie-image-spin infinite 17s linear;
     filter: drop-shadow(0 0 5rem rgb(227, 214, 44));
+    position: absolute;
+    top: 25%;
+    left: 27%;
+    width: 45%;
+    outline: 2px dashed blue;
 }
 
-@keyframes cookie-image-spin {
+.halo-image {
+    animation: halo-image-spin infinite 17s linear;
+}
+
+.box1 {
+    position: absolute;
+    left: 0%;
+    top: 20%;
+    outline: 2px dashed rgb(210, 97, 41);
+}
+
+.box2 {
+    position: absolute;
+    left: 400px;
+    top: 5px;
+    outline: 2px dashed blue;
+}
+
+.box2 img {
+    width: 55%;
+}
+
+@keyframes halo-image-spin {
     from {
         transform: rotate(0deg);
     }
@@ -44,24 +63,35 @@
 
 
 .pointer-image img {
-    width: 10%;
-    height: 10%;
-    transform: rotate(90deg);
+    width: 12%;
+    height: 12%;
+    transform: rotate(94deg);
 }
 
 .pointer-image {
     position: absolute;
     left: 39%;
-    top: 67%;
-    /*animation: point-at-cookie infinite 1s linear;
-    animation-delay: 10s;*/
+    top: 70%;
+    /*animation: point-at-cookie infinite 10s linear;*/
 }
 
 @keyframes point-at-cookie {
     0% {
 		transform: translate(0, 0);
 	}
-	100% {
-		transform: translate(50px, -50px);
+	5% {
+		transform: translate(25px, -25px);
 	}
+    10% {
+        transform: translate(0, 0);
+    }
+    15% {
+        transform: translate(25px, -25px);
+    }
+    20% {
+        transform: translate(0,0);
+    }
+    100% {
+        transform: translate(0,0);
+    }
 }

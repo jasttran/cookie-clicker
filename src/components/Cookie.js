@@ -4,6 +4,7 @@ import ChocChip from '../images/choc-chip.png'
 import './Cookie.css';
 import { useState } from 'react';
 import PointerImage from '../images/pointer.png';
+import Halo from '../images/halo.png'
 
 
 const Cookie = () => {
@@ -31,14 +32,20 @@ const Cookie = () => {
           <span className='text-clicker'> Clicker</span>
           <div className='text-description'><p>Click it... I dare you</p></div>
         </div>
+
         <div className='box2'>
-          <div className='cookie-image'>
-            <IconButton disableRipple="true" onClick={incrementCount}>
-                <img draggable={false} src={ChocChip} />
+            <IconButton disableRipple="true">
+                <img className='halo-image' draggable={false} src={Halo} />
             </IconButton>
-          </div>
+            <div className='cookie-image'>
+              <IconButton disableRipple="true" onClick={incrementCount}>
+                  <img draggable={false} src={ChocChip} />
+              </IconButton>
+            </div>
         </div>
+
         <div className="pointer-image"><img draggable={false} src={PointerImage} /></div>
+
       </div>
 
       <h1>$ {money}</h1>
