@@ -1,38 +1,27 @@
 .cookie-container {
     margin: 120px;
     position: relative;
-    height: 45vh;
-}
-
-.cookie-image {
-    filter: drop-shadow(0 0 5rem rgb(227, 214, 44));
-    position: absolute;
-    top: 25%;
-    left: 27%;
-    width: 45%;
-    outline: 2px dashed blue;
+    outline: 2px dashed rgb(6, 238, 14);
+    height: 100vh;
+    top: 0;
+    left: 0;
 }
 
 .halo-image {
-    animation: halo-image-spin infinite 17s linear;
-}
-
-.box1 {
-    position: absolute;
-    left: 0%;
-    top: 20%;
-    outline: 2px dashed rgb(210, 97, 41);
-}
-
-.box2 {
-    position: absolute;
-    left: 400px;
-    top: 5px;
+    /*animation: halo-image-spin infinite 17s linear;*/
     outline: 2px dashed blue;
+    position: relative;
+    width: 85%;
+    top: 0;
+    left: 0;
 }
 
-.box2 img {
-    width: 55%;
+.cookie-image {
+    position: absolute;
+    outline: 2px dashed rgb(242, 89, 65);
+    top: 144px;
+    left: 154px;
+    width: 35%;
 }
 
 @keyframes halo-image-spin {
@@ -41,57 +30,5 @@
     }
     to {
         transform: rotate(360deg);
-    }
-}
-
-.text-cookie {
-    color: #D37600;
-    font-size: 70px;
-    font-weight: 500;
-}
-
-.text-clicker {
-    color: rgb(51, 16, 1);
-    font-size: 70px;
-    font-weight: 500;
-}
-
-.text-description {
-    font-size: 25px;
-    padding-left: 6px;
-}
-
-
-.pointer-image img {
-    width: 12%;
-    height: 12%;
-    transform: rotate(94deg);
-}
-
-.pointer-image {
-    position: absolute;
-    left: 39%;
-    top: 70%;
-    /*animation: point-at-cookie infinite 10s linear;*/
-}
-
-@keyframes point-at-cookie {
-    0% {
-		transform: translate(0, 0);
-	}
-	5% {
-		transform: translate(25px, -25px);
-	}
-    10% {
-        transform: translate(0, 0);
-    }
-    15% {
-        transform: translate(25px, -25px);
-    }
-    20% {
-        transform: translate(0,0);
-    }
-    100% {
-        transform: translate(0,0);
     }
 }

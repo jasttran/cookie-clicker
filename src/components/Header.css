@@ -1,0 +1,16 @@
+.text-cookie {
+    color: #D37600;
+    font-size: 70px;
+    font-weight: 500;
+}
+
+.text-clicker {
+    color: rgb(51, 16, 1);
+    font-size: 70px;
+    font-weight: 500;
+}
+
+.text-description {
+    font-size: 25px;
+    padding-left: 6px;
+}

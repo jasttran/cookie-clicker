@@ -1,4 +1,4 @@
-import Cookie from './components/Cookie'
+import Cookie from './components/HomePage'
 import Navbar from './components/Navbar';
 
 function App() {
