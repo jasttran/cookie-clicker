@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 const Cookie = () => {
     const [money, setMoney] = useState(0);
-    const [increment, setIncrement] = useState(99999999999999999999999)
+    const [increment, setIncrement] = useState(1)
     const [priceIncrement, setPriceIncrement] = useState(10)
 
     function incrementCount() {
@@ -24,7 +24,9 @@ const Cookie = () => {
   return (
     <div className='cookie-container'>
         <img className='halo-image' draggable={false} src={Halo} />
-        <img className='cookie-image' draggable={false} src={ChocChip} />
+        <img className='cookie-image' draggable={false} src={ChocChip}
+         onClick={incrementCount}/>
+        <p>{money}</p>
     </div>
   )
 }

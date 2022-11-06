@@ -8,19 +8,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 6rem;
+    padding: 20px 120px;
 } 
 
 .navbar a{
     color: inherit;
     text-decoration: none;
-    padding: 1rem;
+    
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
+    cursor: pointer;
+}
+
+.navbar li {
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .kookie {

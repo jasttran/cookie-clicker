@@ -18,6 +18,7 @@
     top: 160px;
     left: 170px;
     width: 280px;
+    cursor: pointer;
 }
 
 @keyframes halo-image-spin {
