@@ -2,10 +2,6 @@
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-}
-
 .navbar {
     background-color: rgb(51, 16, 1);
     color: rgb(252, 238, 221);

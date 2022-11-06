@@ -1,27 +1,23 @@
 .cookie-container {
-    margin: 120px;
     position: relative;
-    outline: 2px dashed rgb(6, 238, 14);
     height: 100vh;
     top: 0;
     left: 0;
 }
 
 .halo-image {
-    /*animation: halo-image-spin infinite 17s linear;*/
-    outline: 2px dashed blue;
+    animation: halo-image-spin infinite 40s linear;
     position: relative;
-    width: 85%;
+    width: 600px;
     top: 0;
     left: 0;
 }
 
 .cookie-image {
     position: absolute;
-    outline: 2px dashed rgb(242, 89, 65);
-    top: 144px;
-    left: 154px;
-    width: 35%;
+    top: 160px;
+    left: 170px;
+    width: 280px;
 }
 
 @keyframes halo-image-spin {

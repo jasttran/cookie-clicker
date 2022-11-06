@@ -9,8 +9,8 @@ const HomePage = () => {
   return (
     <div>
       <div className='homepage-container'> 
-          <Header className='box1'/>
-          <Cookie />
+          <Header className='header-box'/>
+          <Cookie className='cookie-box'/>
       </div>
     </div>
   )
