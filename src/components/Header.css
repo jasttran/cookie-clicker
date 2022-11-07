@@ -19,3 +19,37 @@
     font-size: 25px;
     padding-left: 6px;
 }
+
+
+.pointer-image img {
+    width: 80px;
+    transform: rotate(94deg);
+}
+
+.pointer-image {
+    position: relative;
+    left: 90%;
+    top: 5px;
+    animation: point-at-cookie infinite 10s linear;
+}
+
+@keyframes point-at-cookie {
+    0% {
+		transform: translate(0, 0);
+	}
+	5% {
+		transform: translate(25px, -25px);
+	}
+    10% {
+        transform: translate(0, 0);
+    }
+    15% {
+        transform: translate(25px, -25px);
+    }
+    20% {
+        transform: translate(0,0);
+    }
+    100% {
+        transform: translate(0,0);
+    }
+}
