@@ -20,7 +20,7 @@
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 3rem;
+    gap: 40px;
     cursor: pointer;
 }
 
@@ -28,7 +28,7 @@
     font-size: 15px;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 7px;
 }
 
 .kookie {
