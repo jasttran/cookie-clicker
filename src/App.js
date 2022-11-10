@@ -1,17 +1,17 @@
-import Cookie from './components/HomePage'
-import Navbar from './components/Navbar';
+
 import { Route, Routes } from 'react-router-dom'
-import HomePage from './components/HomePage';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import AboutPage from './pages/AboutPage';
+
 
 function App() {
   return (
-    <div className="App">
     <Routes>
       <Route path="/" element={<HomePage />}/>
-      <Route path="/login" element={<h1> hi</h1>}/>
+      <Route path="/login" element={<LoginPage />}/>
+      <Route path="/about" element={<AboutPage />}/>
     </Routes>
-      <HomePage />
-    </div>
   );
 }
 

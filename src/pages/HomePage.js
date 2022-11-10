@@ -1,8 +1,8 @@
 
 import './HomePage.css';
-import Header from './Header';
-import Cookie from './Cookie';
-import Navbar from './Navbar';
+import Header from '../components/Header';
+import Cookie from '../components/Cookie';
+import Navbar from '../components/Navbar';
 
 const HomePage = () => {
   return (
