@@ -1,9 +1,12 @@
-
+import "./LoginPage.css"
+import ChocChip from "../images/choc-chip.png"
 
 const LoginPage = () => {
   return (
-    <div>
-       <a href="/" >Go Back</a>
+    <div className="page">
+       <div className="container">
+        <p className="login-header"><img className='cookie-img' draggable={false} src={ChocChip} />Login</p>
+       </div>
     </div>
   )
 }

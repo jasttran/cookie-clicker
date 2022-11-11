@@ -1,4 +1,3 @@
-import IconButton from '@mui/material/IconButton';
 import ChocChip from '../images/choc-chip.png';
 import './Cookie.css';
 import Halo from '../images/halo.png';
