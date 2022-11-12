@@ -6,6 +6,8 @@ import phase5 from '../images/phase/phase5.png'
 import phase6 from '../images/phase/phase6.png'
 import phase7 from '../images/phase/phase7.png'
 import login1 from '../images/loginPhases/login1.png'
+import login2 from '../images/loginPhases/login2.png'
+import login3 from '../images/loginPhases/login3.png'
 import './AboutPage.css'
 
 const AboutPage = () => {
@@ -24,6 +26,8 @@ const AboutPage = () => {
         <img draggable={false} src={phase6} />
         <img draggable={false} src={phase7} />
         <img draggable={false} src={login1} />
+        <img draggable={false} src={login2} />
+        <img draggable={false} src={login3} />
       </div>
     </div>
   )

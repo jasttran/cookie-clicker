@@ -3,10 +3,21 @@ import ChocChip from "../images/choc-chip.png"
 
 const LoginPage = () => {
   return (
-    <div className="page">
+    <div className="login-page">
+      <a href="/" >Go Back</a>
        <div className="container">
-        <p className="login-header"><img className='cookie-img' draggable={false} src={ChocChip} />Login</p>
+        <p className="welcome-header">Welcome<br/>Back!</p>
+        <div className="login-form">
+          <form>
+            <label> <input type="text" placeholder="Email"/> </label>
+            <label> <input type="password" placeholder="Password"/> </label>
+            <div>
+              <button type="submit">Login</button>
+            </div>
+          </form>
+        </div>
        </div>
+       <p className="footer">&#169; 2020 Kooki. All Rights Reserved</p>
     </div>
   )
 }
