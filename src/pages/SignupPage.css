@@ -1,10 +1,10 @@
-.login-page {
+.signup-page {
     background-image: url("../images/login-background.png");
     height: 100vh;
     background-size: 600px;
 }
 
-.welcome-header {
+.signup-header {
     font-size: 50px;
     color: rgb(73, 26, 6);
     font-weight: 600;
@@ -55,11 +55,11 @@ button {
 
 button:hover {background-color: #ac6100}
 
-.create-account {
+.login-footer {
     margin: 30px 16%;
     text-align: start;
 }
 
-.create-account a{
+.login-footer a{
     color: #ac6100;
 }
