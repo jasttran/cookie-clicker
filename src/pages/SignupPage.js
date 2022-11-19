@@ -4,7 +4,7 @@ const SignupPage = () => {
   return (
     <div className="signup-page">
       <a href="/" >Go Back</a>
-       <div className="container">
+       <div className="signup-container">
         <p className="signup-header">Sign Up</p>
         <div className="signup-form">
           <form>
@@ -15,7 +15,7 @@ const SignupPage = () => {
             </div>
           </form>
         </div>
-        <p className="login-footer">Already a Member? <a href="/signup" >Login</a> </p>
+        <p className="login-footer">Already a Member? <a href="/login" >Login</a> </p>
        </div>
        <p className="footer">&#169; 2020 Kooki. All Rights Reserved</p>
     </div>

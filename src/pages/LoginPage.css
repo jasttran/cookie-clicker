@@ -11,11 +11,10 @@
     padding-top: 50px;
 }
 
-.container {
+.login-container {
     background-color: rgb(254, 251, 245);
     text-align: center;
-    height: 60vh;
-    margin-top: 7%;
+    margin-top: 10%;
     margin-left: 35%;
     margin-right: 35%;
 }
@@ -25,15 +24,14 @@ input {
     width: 70%;
     height: 35px;
     border-radius: 5px;
-    border: 0px solid #D37600;
+    border: 0px solid #433523;
     background-color: rgb(249, 233, 205);
-    padding: 23px;
     margin: 15px;
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px rgb(249, 233, 205) inset !important;
 }
@@ -56,8 +54,9 @@ button {
 button:hover {background-color: #ac6100}
 
 .create-account {
-    margin: 30px 16%;
+    margin: 10px 16%;
     text-align: start;
+    padding-bottom: 50px;
 }
 
 .create-account a{

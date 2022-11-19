@@ -2,39 +2,17 @@ import "./LoginPage.css"
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-async function loginUser(credentials) {
-  return fetch('http://localhost:3000/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(credentials)
-  })
-    .then(data => data.json())
- }
 
 const LoginPage = ({setToken}) => {
-  const [username, setUserName] = useState();
-  const [password, setPassword] = useState();
-
-  const handleSubmit = async e => {
-    e.preventDefault();
-    const token = await loginUser({
-      username,
-      password
-    });
-    setToken(token);
-  }
-
   return (
     <div className="login-page">
       <a href="/" >Go Back</a>
-       <div className="container">
+       <div className="login-container">
         <p className="welcome-header">Welcome<br/>Back!</p>
         <div className="login-form">
-          <form onSubmit={handleSubmit}>
-            <label> <input type="text" placeholder="Email" onChange={e => setUserName(e.target.value)}/> </label>
-            <label> <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}/> </label>
+          <form>
+            <label> <input type="text" placeholder="Email"/> </label>
+            <label> <input type="password" placeholder="Password"/> </label>
             <div>
               <button type="submit">Login</button>
             </div>

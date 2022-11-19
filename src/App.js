@@ -8,12 +8,6 @@ import SignupPage from './pages/SignupPage';
 
 
 function App() {
-  const [token, setToken] = useState();
-
-  if (!token) {
-    return <HomePage setToken={setToken} />
-  }
-
   return (
     <Routes>
       <Route path="/" element={<HomePage />}/>
