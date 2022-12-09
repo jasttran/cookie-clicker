@@ -1,9 +1,6 @@
-import "./LoginPage.css"
-import PropTypes from 'prop-types';
-import { useState } from 'react';
+import "./Login.css";
 
-
-const LoginPage = ({setToken}) => {
+const Login = () => {
   return (
     <div className="login-page">
       <a href="/" >Go Back</a>
@@ -18,16 +15,11 @@ const LoginPage = ({setToken}) => {
             </div>
           </form>
         </div>
-        <p className="create-account">A Newbie? <a href="/signup" >Create Account</a> </p>
+        <p className="create-account">A Newbie? <a href="/auth/register" >Create Account</a> </p>
        </div>
        <p className="footer">&#169; 2020 Kooki. All Rights Reserved</p>
     </div>
   )
 }
 
-
-LoginPage.propTypes = {
-  setToken: PropTypes.func.isRequired
-}
-
-export default LoginPage
+export default Login

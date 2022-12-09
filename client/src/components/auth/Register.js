@@ -1,12 +1,12 @@
-import './SignupPage.css'
+import './Register.css'
 
-const SignupPage = () => {
+const Register = () => {
   return (
-    <div className="signup-page">
+    <div className="register-page">
       <a href="/" >Go Back</a>
-       <div className="signup-container">
-        <p className="signup-header">Sign Up</p>
-        <div className="signup-form">
+       <div className="register-container">
+        <p className="register-header">Sign Up</p>
+        <div className="register-form">
           <form>
             <label> <input type="text" placeholder="Enter Your Email"/> </label>
             <label> <input type="password" placeholder="Create a Password"/> </label>
@@ -15,11 +15,11 @@ const SignupPage = () => {
             </div>
           </form>
         </div>
-        <p className="login-footer">Already a Member? <a href="/login" >Login</a> </p>
+        <p className="login-footer">Already a Member? <a href="/auth/login" >Login</a> </p>
        </div>
        <p className="footer">&#169; 2020 Kooki. All Rights Reserved</p>
     </div>
   )
 }
 
-export default SignupPage
+export default Register;

@@ -1,19 +1,18 @@
 
 import { Route, Routes } from 'react-router-dom'
-import { useState } from 'react';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import AboutPage from './pages/AboutPage';
-import SignupPage from './pages/SignupPage';
+import HomePage from './components/pages/HomePage';
+import AboutPage from './components/pages/AboutPage';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />}/>
-      <Route path="/login" element={<LoginPage />}/>
+      <Route path="/auth/login" element={<Login />}/>
       <Route path="/about" element={<AboutPage />}/>
-      <Route path="/signup" element={<SignupPage />}/>
+      <Route path="/auth/register" element={<Register />}/>
     </Routes>
   );
 }

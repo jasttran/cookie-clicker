@@ -1,20 +1,20 @@
-.signup-page {
-    background-image: url("../images/login-background.png");
+.login-page {
+    background-image: url("../../images/login-background.png");
     height: 100vh;
     background-size: 600px;
 }
 
-.signup-header {
+.welcome-header {
     font-size: 50px;
     color: rgb(73, 26, 6);
     font-weight: 600;
     padding-top: 50px;
 }
 
-.signup-container {
+.login-container {
     background-color: rgb(254, 251, 245);
     text-align: center;
-    margin-top: 7%;
+    margin-top: 10%;
     margin-left: 35%;
     margin-right: 35%;
 }
@@ -24,9 +24,8 @@ input {
     width: 70%;
     height: 35px;
     border-radius: 5px;
-    border: 0px solid #D37600;
+    border: 0px solid #433523;
     background-color: rgb(249, 233, 205);
-    padding: 23px;
     margin: 15px;
 }
 
@@ -54,12 +53,12 @@ button {
 
 button:hover {background-color: #ac6100}
 
-.login-footer {
-    margin: 30px 16%;
+.create-account {
+    margin: 10px 16%;
     text-align: start;
     padding-bottom: 50px;
 }
 
-.login-footer a{
+.create-account a{
     color: #ac6100;
 }
