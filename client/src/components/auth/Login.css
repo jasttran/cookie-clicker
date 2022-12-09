@@ -1,0 +1,64 @@
+.login-page {
+    background-image: url("../../images/login-background.png");
+    height: 100vh;
+    background-size: 600px;
+}
+
+.welcome-header {
+    font-size: 50px;
+    color: rgb(73, 26, 6);
+    font-weight: 600;
+    padding-top: 50px;
+}
+
+.login-container {
+    background-color: rgb(254, 251, 245);
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+
+input {
+    width: 70%;
+    height: 35px;
+    border-radius: 5px;
+    border: 0px solid #433523;
+    background-color: rgb(249, 233, 205);
+    margin: 15px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px rgb(249, 233, 205) inset !important;
+}
+
+.footer {
+    text-align: center;
+}
+
+button {
+    color: #ffffff;
+    padding: 12px;
+    width: 20%;
+    background-color: #e29932;
+    border-radius: 5px;
+    border: 0px solid #D37600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {background-color: #ac6100}
+
+.create-account {
+    margin: 10px 16%;
+    text-align: start;
+    padding-bottom: 50px;
+}
+
+.create-account a{
+    color: #ac6100;
+}
