@@ -1,15 +1,38 @@
 import "./Login.css";
+import axios from "axios";
 
 const Login = () => {
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    if (!email || !password) return;
+
+    try {
+      axios.post("http://localhost:3001/auth/login", {
+        email: email,
+        password: password,
+      }).then(response => {
+        console.log(response);
+      });
+    } catch(e) {
+      console.log(e);
+    }
+
+  }
+
   return (
     <div className="login-page">
       <a href="/" >Go Back</a>
        <div className="login-container">
         <p className="welcome-header">Welcome<br/>Back!</p>
         <div className="login-form">
-          <form>
-            <label> <input type="text" placeholder="Email"/> </label>
-            <label> <input type="password" placeholder="Password"/> </label>
+          <form onSubmit={handleSubmit}>
+            <label> <input type="text" placeholder="Enter Email" name=
+            "email"/> </label>
+            <label> <input type="password" placeholder="Enter Password" name="password"/> </label>
             <div>
               <button type="submit">Login</button>
             </div>
