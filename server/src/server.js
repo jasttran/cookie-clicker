@@ -1,6 +1,9 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
-import auth from './routes/auth.js'
+import auth from './routes/auth.js';
+import mongoose from 'mongoose';
+
 const app = express();
 
 app.use(express.json()); // built-in middleware for json
