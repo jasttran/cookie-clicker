@@ -1,10 +1,15 @@
-import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
 import auth from './routes/auth.js';
-import mongoose from 'mongoose';
+import mongoose, { connect } from 'mongoose';
+import connectDB from './dbConn.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
+const PORT = process.env.PORT || 5001;
 const app = express();
+
+connectDB(); // Connect to MongoDB
 
 app.use(express.json()); // built-in middleware for json
 app.use(cors()); // cross origin resource sharing
@@ -13,4 +18,4 @@ app.use(cors()); // cross origin resource sharing
 // other routes below. require the router we have created
 app.use('/auth', auth);
 
-app.listen(3001, () => console.log('API is running on http://localhost:3001'));
+app.listen(PORT, () => console.log(`API is running on http://localhost:${PORT}`));
