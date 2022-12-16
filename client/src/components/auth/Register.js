@@ -7,7 +7,7 @@ const Register = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
     try {
-      axios.post('http://localhost:3001/auth/register', {
+      axios.post(`${process.env.URL}/auth/register`, {
         email: email,
         password: password
       }).then(response => {
@@ -32,7 +32,7 @@ const Register = () => {
             </div>
           </form>
         </div>
-        <p className="login-footer">Already a Member? <a href="/auth/login" >Login</a> </p>
+        <p className="login-footer">Already a Member? <a href="/auth/login">Login</a> </p>
        </div>
        <p className="footer">&#169; 2020 Kooki. All Rights Reserved</p>
     </div>
