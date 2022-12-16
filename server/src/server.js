@@ -4,6 +4,8 @@ import auth from './routes/auth.js';
 import mongoose, { connect } from 'mongoose';
 import connectDB from './dbConn.js';
 import dotenv from 'dotenv';
+
+mongoose.set('strictQuery', true);
 dotenv.config();
 
 const PORT = process.env.PORT || 5001;
@@ -18,4 +20,7 @@ app.use(cors()); // cross origin resource sharing
 // other routes below. require the router we have created
 app.use('/auth', auth);
 
-app.listen(PORT, () => console.log(`API is running on http://localhost:${PORT}`));
+mongoose.connection.once('open', () => {
+    console.log('Connected to MongoDB');
+    app.listen(PORT, () => console.log(`API is running on http://localhost:${PORT}`));
+})
