@@ -26,8 +26,10 @@ const Register = () => {
         <p className="register-header">Sign Up</p>
         <div className="register-form">
           <form onSubmit={handleSubmit}>
-            <label> <input type="text" placeholder="Enter Your Email" name="email"/> </label>
+            <label> <input type="email" placeholder="Enter Your Email" name="email"/> </label>
             <label> <input type="password" placeholder="Create a Password" name="password"/> </label>
+            <br />
+            <label> <input type="checkbox" name="saveCurrStatus"className="inputCheckbox" /> Save Current Status? </label>
             <div>
               <button type="submit">Sign Up</button>
             </div>

@@ -3,21 +3,12 @@ import { register } from './helpers.js'
 
 const router = express.Router();
 
-/*
-< Registers a new user with given email and password. >
-
-Arguments:
-{
-    email: String,
-    password: String,
-}
-
-Return Value:
-    Throws < 400 ERROR > on
-        - email is already used
-        - the length of email and password is not at least 1 character
-    Returns < token >
-*/
+/**
+ * Registers a new user with given email and password.
+ * Arguments:
+ *      email: String,
+ *      password: String
+ */
 router.post('/register', async (req, res) => {
     const result = await register(req.body.email, req.body.password);
 
@@ -30,15 +21,12 @@ router.post('/register', async (req, res) => {
     }
 });
 
-/*
-< Finds matching login and password. If none found, does nothing. >
-Assumptions:
-    - email and password is not null
-Arguments:
-{
-    email: String,
-    password: String,
-}
+/**
+ * If matching login and password found, loads the current CookieClicker status.
+ * Otherwise, does nothing.
+ * Arguments:
+ *      email: String,
+ *      password: String
 */
 router.post('/login', (req, res) => {
     const { email, password } = req.body;

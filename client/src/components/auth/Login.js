@@ -38,6 +38,7 @@ const Login = () => {
             </div>
           </form>
         </div>
+        < br/>
         <p className="create-account">A Newbie? <a href="/auth/register" >Create Account</a> </p>
        </div>
        <p className="footer">&#169; 2020 Kooki. All Rights Reserved</p>

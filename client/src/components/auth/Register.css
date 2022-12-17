@@ -19,7 +19,6 @@
     margin-right: 35%;
 }
 
-
 input {
     width: 70%;
     height: 35px;
@@ -28,6 +27,15 @@ input {
     background-color: rgb(249, 233, 205);
     padding: 23px;
     margin: 15px;
+    vertical-align: middle;
+}
+
+.inputCheckbox {
+    width: 10%;
+    height: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    accent-color: rgb(161, 90, 14);
 }
 
 input:-webkit-autofill,
