@@ -11,7 +11,7 @@ const Login = () => {
     if (!email || !password) return;
 
     try {
-      axios.post(`${process.env.URL}/auth/login`, {
+      axios.post(`${process.env.REACT_APP_URL}/auth/login`, {
         email: email,
         password: password,
       }).then(response => {

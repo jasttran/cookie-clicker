@@ -6,8 +6,9 @@ const Register = () => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
+
     try {
-      axios.post(`${process.env.URL}/auth/register`, {
+      axios.post(`${process.env.REACT_APP_URL}/auth/register`, {
         email: email,
         password: password
       }).then(response => {
