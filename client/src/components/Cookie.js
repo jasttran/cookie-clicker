@@ -1,14 +1,18 @@
 import ChocChip from '../images/choc-chip.png';
 import './Cookie.css';
 import Halo from '../images/halo.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const Cookie = () => {
+const Cookie = ({ callback }) => {
     const [money, setMoney] = useState(0);
 
     function incrementCount() {
         setMoney(money + 1)
     }
+
+    useEffect(() => {
+        callback(money)
+    })
 
   return (
     <div className='cookie-container'>
