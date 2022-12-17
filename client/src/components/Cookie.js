@@ -5,19 +5,9 @@ import { useState } from 'react';
 
 const Cookie = () => {
     const [money, setMoney] = useState(0);
-    const [increment, setIncrement] = useState(1)
-    const [priceIncrement, setPriceIncrement] = useState(10)
 
     function incrementCount() {
-        setMoney(money + increment)
-    }
-
-    function increaseIncrement() {
-        if (money >= priceIncrement) {
-            setMoney(money - priceIncrement)
-            setPriceIncrement(priceIncrement * 10)
-            setIncrement(increment + 1)
-        }
+        setMoney(money + 1)
     }
 
   return (
@@ -31,9 +21,3 @@ const Cookie = () => {
 }
 
 export default Cookie
-
-/* <button onClick={increaseIncrement}>${priceIncrement} to Increase to ${increment + 1} per click</button>
-        <h1>$ {money}</h1> 
-        <IconButton disableRipple="true" onClick={incrementCount}>
-        
-*/
