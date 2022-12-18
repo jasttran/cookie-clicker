@@ -1,7 +1,12 @@
 import axios from 'axios';
-import './Register.css'
+import './Register.css';
+import { Link, useLocation } from 'react-router-dom';
+
 
 const Register = () => {
+  //const location = useLocation();
+  //const { currMoneyStatus } = location.state; //passed by NavBar component
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -21,7 +26,7 @@ const Register = () => {
   }
   return (
     <div className="register-page">
-      <a href="/" >Go Back</a>
+      <Link to="/" >Go Back</Link>
        <div className="register-container">
         <p className="register-header">Sign Up</p>
         <div className="register-form">
@@ -35,7 +40,7 @@ const Register = () => {
             </div>
           </form>
         </div>
-        <p className="login-footer">Already a Member? <a href="/auth/login">Login</a> </p>
+        <p className="login-footer">Already a Member? <Link to="/auth/login">Login</Link> </p>
        </div>
        <p className="footer">&#169; 2020 Kooki. All Rights Reserved</p>
     </div>

@@ -1,5 +1,6 @@
 import "./Login.css";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
@@ -25,7 +26,7 @@ const Login = () => {
 
   return (
     <div className="login-page">
-      <a href="/" >Go Back</a>
+      <Link to="/" >Go Back</Link>
        <div className="login-container">
         <p className="welcome-header">Welcome<br/>Back!</p>
         <div className="login-form">
@@ -39,7 +40,7 @@ const Login = () => {
           </form>
         </div>
         < br/>
-        <p className="create-account">A Newbie? <a href="/auth/register" >Create Account</a> </p>
+        <p className="create-account">A Newbie? <Link to="/auth/register" >Create Account</Link> </p>
        </div>
        <p className="footer">&#169; 2020 Kooki. All Rights Reserved</p>
     </div>
