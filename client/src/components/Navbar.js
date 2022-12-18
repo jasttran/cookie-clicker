@@ -9,7 +9,7 @@ const Navbar = ({money}) => {
       <Link to="/" className='kookie'>Kooki</Link>
       <ul>
         <Link to="/about" className='about'><InfoIcon />About</Link>
-        <Link to="/auth/register" className='register' state={{ currMoneyStatus: money }}><PersonIcon/>Register</Link>
+        <Link to="/auth/register" className='register'><PersonIcon/>Register</Link>
       </ul>
     </nav>
   )

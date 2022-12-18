@@ -4,13 +4,13 @@ import { Link, useLocation } from 'react-router-dom';
 
 
 const Register = () => {
-  const location = useLocation();
-  const currMoneyStatus = location.state?.currMoneyStatus ; //passed by NavBar component
+  const moneyData = JSON.parse(localStorage.getItem('KOOKI_MONEY_STATUS'));
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
+    const moneyStatus = event.target.saveCurrStatus.checked ? moneyData : 0;
 
     try {
       axios.post(`${process.env.REACT_APP_URL}/auth/register`, {
