@@ -5,15 +5,19 @@ import Cookie from '../../components/Cookie';
 import Navbar from '../../components/Navbar';
 
 const HomePage = () => {
-  function displayMoney(money) {
+  let money = 0;
+
+  function updateMoney(newMoney) {
+    money = newMoney;
     console.log("from parent: " + money);
   }
+
   return (
     <div>
-      <Navbar />
+      <Navbar money={money}/>
       <div className='homepage-container'>
           <Header className='header-box'/>
-          <Cookie className='cookie-box' callback={displayMoney}/>
+          <Cookie className='cookie-box' callback={updateMoney}/>
       </div>
     </div>
   )

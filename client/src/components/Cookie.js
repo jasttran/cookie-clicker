@@ -10,6 +10,7 @@ const Cookie = ({ callback }) => {
         setMoney(money + 1)
     }
 
+    // setMoney does not update "money" immediately
     useEffect(() => {
         callback(money)
     })
