@@ -4,8 +4,8 @@ import { Link, useLocation } from 'react-router-dom';
 
 
 const Register = () => {
-  //const location = useLocation();
-  //const { currMoneyStatus } = location.state; //passed by NavBar component
+  const location = useLocation();
+  const currMoneyStatus = location.state?.currMoneyStatus ; //passed by NavBar component
 
   const handleSubmit = (event) => {
     event.preventDefault();
