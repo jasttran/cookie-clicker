@@ -1,10 +1,11 @@
 import axios from 'axios';
 import './Register.css';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
   const moneyData = JSON.parse(localStorage.getItem('KOOKI_MONEY_STATUS'));
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,9 +16,11 @@ const Register = () => {
     try {
       axios.post(`${process.env.REACT_APP_URL}/auth/register`, {
         email: email,
-        password: password
+        password: password,
+        moneyStatus: moneyStatus
       }).then(response => {
         console.log(response);
+        navigate('/')
       });
     } catch(e) {
       console.log(e);

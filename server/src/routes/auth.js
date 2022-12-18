@@ -7,10 +7,11 @@ const router = express.Router();
  * Registers a new user with given email and password.
  * Arguments:
  *      email: String,
- *      password: String
+ *      password: String,
+ *      moneyStatus: Integer,
  */
 router.post('/register', async (req, res) => {
-    const result = await register(req.body.email, req.body.password);
+    const result = await register(req.body.email, req.body.password, req.body.moneyStatus);
 
     if (result.error !== undefined) {
         console.log(result.error);

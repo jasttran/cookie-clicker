@@ -10,6 +10,10 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
+    moneyStatus: {
+        type: Number,
+        required: true,
+    },
     refreshToken: String
 });
 

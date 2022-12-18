@@ -9,7 +9,6 @@ const HomePage = () => {
 
   function updateMoney(newMoney) {
     money = newMoney;
-    console.log("from parent: " + money);
   }
 
   return (

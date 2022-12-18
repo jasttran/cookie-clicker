@@ -10,6 +10,10 @@ const Cookie = () => {
         setMoney(money + 1)
     }
 
+    window.onbeforeunload = function() {
+      localStorage.clear();
+   }
+
     useEffect(() => {
       const data = JSON.parse(localStorage.getItem('KOOKI_MONEY_STATUS'));
       if (data) {
