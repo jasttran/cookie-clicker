@@ -37,7 +37,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar/>
       <div className='homepage-container'>
           <Header className='header-box'/>
           <Cookie className='cookie-box' setMoney={setMoney} money={money}/>

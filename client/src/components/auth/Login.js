@@ -14,7 +14,7 @@ const Login = () => {
 
     try {
       axios.post(`${process.env.REACT_APP_URL}/auth/login`, {
-        email: email,
+        emailOrUsername: email,
         password: password,
       }).then(response => {
         const savedData = response.data.success;
@@ -36,7 +36,7 @@ const Login = () => {
         <p className="welcome-header">Welcome<br/>Back!</p>
         <div className="login-form">
           <form onSubmit={handleSubmit}>
-            <label> <input type="text" placeholder="Enter Email" name=
+            <label> <input type="text" placeholder="Enter Email or Username" name=
             "email"/> </label>
             <label> <input type="password" placeholder="Enter Password" name="password"/> </label>
             <div>

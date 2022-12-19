@@ -6,12 +6,14 @@ const router = express.Router();
 /**
  * Registers a new user with given email and password.
  * Arguments:
+ *      username: String,
  *      email: String,
  *      password: String,
  *      moneyStatus: Integer,
  */
 router.post('/register', async (req, res) => {
-    const result = await register(req.body.email, req.body.password, req.body.moneyStatus);
+    const { username, email, password, moneyStatus } = req.body;
+    const result = await register(username, email, password, moneyStatus);
 
     if (result.error !== undefined) {
         console.log(result.error);
@@ -23,14 +25,14 @@ router.post('/register', async (req, res) => {
 });
 
 /**
- * If matching login and password found, loads the current CookieClicker status.
+ * If matching email/username and password found, loads the current CookieClicker status.
  * Otherwise, does nothing.
  * Arguments:
- *      email: String,
+ *      emailOrUsername: String,
  *      password: String
 */
 router.post('/login', async (req, res) => {
-    const result = await login(req.body.email, req.body.password);
+    const result = await login(req.body.emailOrUsername, req.body.password);
 
     if (result.error !== undefined) {
         console.log(result.error);

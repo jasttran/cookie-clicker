@@ -9,12 +9,18 @@ const Register = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const username = event.target.username.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    const moneyStatus = event.target.saveCurrStatus.checked ? moneyData : 0;
+    let moneyStatus = 0;
+
+    if (event.target.saveCurrStatus.checked && moneyData !== null) {
+      moneyStatus = moneyData;
+    }
 
     try {
       axios.post(`${process.env.REACT_APP_URL}/auth/register`, {
+        username: username,
         email: email,
         password: password,
         moneyStatus: moneyStatus
@@ -37,10 +43,11 @@ const Register = () => {
         <p className="register-header">Sign Up</p>
         <div className="register-form">
           <form onSubmit={handleSubmit}>
+            <label> <input type="text" placeholder="Create a Username" name="username"/> </label>
             <label> <input type="email" placeholder="Enter Your Email" name="email"/> </label>
             <label> <input type="password" placeholder="Create a Password" name="password"/> </label>
             <br />
-            <label> <input type="checkbox" name="saveCurrStatus"className="inputCheckbox" /> Save Current Status? </label>
+            <label> <input type="checkbox" name="saveCurrStatus" className="inputCheckbox" /> Save Current Status? </label>
             <div>
               <button type="submit">Sign Up</button>
             </div>

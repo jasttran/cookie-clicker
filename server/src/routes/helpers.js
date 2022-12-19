@@ -2,25 +2,30 @@ import Users from '../usersDB.js';
 import cryto from 'crypto';
 
 /**
- * If valid username and password is given, adds the new user to the DB.
+ * If valid username, email and password is given, adds the new user to the DB.
  * Assumes moneyStatus >= 0.
  *
  * @param {string} username
+ * @param {string} email
  * @param {string} password
  * @param {number} moneyStatus
  * 
  * Returns {error: string} on any conditions: 
- *      - email or password not given
- *      - email already registered
+ *      - username, email or password not given
+ *      - email or username already registered
  * Returns {success: string} on success
  */
-export async function register(emailAdd, password, moneyStatus) {
-    if (!emailAdd || !password) return { error: "email or password not given"};
+export async function register(username, emailAdd, password, moneyStatus) {
+    if (!username || !emailAdd || !password) return { error: "username, email or password not given"};
 
-    const duplicate = await Users.findOne({ email: emailAdd }).exec();
-    if (duplicate) return { error: "email already exists "};
+    const duplicateEmail = await Users.findOne({ email: emailAdd }).exec();
+    if (duplicateEmail) return { error: "email already exists "};
+
+    const duplicateUsername = await Users.findOne({ username: username }).exec();
+    if (duplicateUsername) return { error: "username already exists "};
 
     const res = await Users.create ({
+        "username": username,
         "email": emailAdd,
         "password": getHash(password),
         "moneyStatus": moneyStatus,
@@ -32,27 +37,30 @@ export async function register(emailAdd, password, moneyStatus) {
 
 
 /**
- * If email and matching password is given, loads the saved money status
+ * If email/username and matching password is given, loads the saved money status
  *
- * @param {string} username
+ * @param {string} emailOrUsername
  * @param {string} password
  * 
  * Returns {error: string} on any conditions: 
- *      - no email or password given
- *      - email not registered
- *      - email registered but incorrect password
+ *      - no email/username or password given
+ *      - email/username not registered
+ *      - email/username registered but incorrect password
  * Returns {success: moneyStatus} on success
  */
- export async function login(emailAdd, password) {
-    if (!emailAdd || !password) return { error: "email or password not given"};
+ export async function login(emailOrUsername, password) {
+    if (!emailOrUsername || !password) return { error: "email/username or password not given"};
 
-    const foundEmail = await Users.findOne({ email: emailAdd }).exec();
+    const foundEmail = await Users.findOne({ email: emailOrUsername }).exec();
+    const foundUsername = await Users.findOne({ username: emailOrUsername }).exec();
 
-    if (!foundEmail) return { error: "email not registered"};
-    if (foundEmail.password !== getHash(password)) return { error: "password does not match" }
+    if (!foundEmail && !foundUsername) return { error: "email/username not registered"};
 
-    return { success: foundEmail.moneyStatus }
+    if ((foundEmail && foundEmail.password !== getHash(password)) || 
+        (foundUsername && foundUsername.password !== getHash(password)))
+        return { error: "password does not match" }
 
+    return foundEmail ? { success: foundEmail.moneyStatus } : { success: foundUsername.moneyStatus }
 }
 
 function getHash(plaintext) {
