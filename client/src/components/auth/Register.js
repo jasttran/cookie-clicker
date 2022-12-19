@@ -20,7 +20,10 @@ const Register = () => {
         moneyStatus: moneyStatus
       }).then(response => {
         console.log(response);
-        navigate('/')
+        navigate('/', {state: { 
+          moneyStatus: moneyData,
+          fromRegister: true,
+        }})
       });
     } catch(e) {
       console.log(e);
