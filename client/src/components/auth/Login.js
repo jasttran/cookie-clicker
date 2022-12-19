@@ -1,8 +1,9 @@
 import "./Login.css";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate()
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,13 +17,17 @@ const Login = () => {
         email: email,
         password: password,
       }).then(response => {
-        console.log(response);
+        const savedData = response.data.success;
+        navigate('/', {state: { 
+          moneyStatus: savedData,
+          fromLogin: true,
+        }})
       });
     } catch(e) {
       console.log(e);
     }
-
   }
+
 
   return (
     <div className="login-page">

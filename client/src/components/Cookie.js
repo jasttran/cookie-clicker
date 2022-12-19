@@ -1,31 +1,11 @@
 import ChocChip from '../images/choc-chip.png';
 import './Cookie.css';
 import Halo from '../images/halo.png';
-import { useState, useEffect } from 'react';
 
-const Cookie = () => {
-    const [money, setMoney] = useState(0);
-
-    function incrementCount() {
-        setMoney(money + 1)
-    }
-
-    window.onbeforeunload = function() {
-      localStorage.clear();
-   }
-
-    useEffect(() => {
-      const data = JSON.parse(localStorage.getItem('KOOKI_MONEY_STATUS'));
-      if (data) {
-        setMoney(data)
-      }
-    }, [])
-
-    // setMoney does not update "money" immediately
-    useEffect(() => {
-        console.log('money' + money)
-        localStorage.setItem('KOOKI_MONEY_STATUS', JSON.stringify(money));
-    }, [money])
+const Cookie = ({ setMoney, money }) => {
+  function incrementCount() {
+    setMoney(money + 1)
+  }
 
   return (
     <div className='cookie-container'>
