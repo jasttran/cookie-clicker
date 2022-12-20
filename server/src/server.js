@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import auth from './routes/auth.js';
-import mongoose, { connect } from 'mongoose';
+import game from './routes/game.js';
+import mongoose from 'mongoose';
 import connectDB from './dbConn.js';
 import dotenv from 'dotenv';
 
@@ -19,6 +20,7 @@ app.use(cors()); // cross origin resource sharing
 // route any request coming for the /login to the router, instead of the 
 // other routes below. require the router we have created
 app.use('/auth', auth);
+app.use('/game', game);
 
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');

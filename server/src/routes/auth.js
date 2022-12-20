@@ -30,6 +30,9 @@ router.post('/register', async (req, res) => {
  * Arguments:
  *      emailOrUsername: String,
  *      password: String
+ * Returns:
+ *      success: String,
+ *      username: String
 */
 router.post('/login', async (req, res) => {
     const result = await login(req.body.emailOrUsername, req.body.password);
@@ -38,8 +41,8 @@ router.post('/login', async (req, res) => {
         console.log(result.error);
         res.status(400).send({ error: result.error });
     } else {
-        console.log(result.success);
-        res.status(200).send({ success: result.success });
+        console.log("success money status: " + result.success);
+        res.status(200).send({ success: result.success, username: result.username });
     }
 })
 

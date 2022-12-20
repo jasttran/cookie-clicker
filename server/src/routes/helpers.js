@@ -46,7 +46,7 @@ export async function register(username, emailAdd, password, moneyStatus) {
  *      - no email/username or password given
  *      - email/username not registered
  *      - email/username registered but incorrect password
- * Returns {success: moneyStatus} on success
+ * Returns {success: moneyStatus, username: String} on success
  */
  export async function login(emailOrUsername, password) {
     if (!emailOrUsername || !password) return { error: "email/username or password not given"};
@@ -60,7 +60,9 @@ export async function register(username, emailAdd, password, moneyStatus) {
         (foundUsername && foundUsername.password !== getHash(password)))
         return { error: "password does not match" }
 
-    return foundEmail ? { success: foundEmail.moneyStatus } : { success: foundUsername.moneyStatus }
+    return foundEmail 
+        ? { success: foundEmail.moneyStatus, username: foundEmail.username } 
+        : { success: foundUsername.moneyStatus, username: foundUsername.username }
 }
 
 function getHash(plaintext) {

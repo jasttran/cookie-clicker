@@ -7,19 +7,19 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const email = event.target.email.value;
+    const emailOrUsername = event.target.email.value;
     const password = event.target.password.value;
-
-    if (!email || !password) return;
 
     try {
       axios.post(`${process.env.REACT_APP_URL}/auth/login`, {
-        emailOrUsername: email,
+        emailOrUsername: emailOrUsername,
         password: password,
       }).then(response => {
         const savedData = response.data.success;
+        const username = response.data.username;
         navigate('/loggedIn', {state: { 
-          moneyStatus: savedData
+          moneyStatus: savedData,
+          username: username,
         }})
       });
     } catch(e) {

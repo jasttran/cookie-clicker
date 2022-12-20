@@ -1,11 +1,11 @@
 import './Navbar.css'
 import PersonIcon from '@mui/icons-material/Person';
 import InfoIcon from '@mui/icons-material/Info';
-import { Link, renderMatches } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Navbar = ({ isLoggedIn, user }) => {
+const Navbar = ({ isLoggedIn, username }) => {
   const loggedIcon = isLoggedIn
-    ? <Link to="/auth/logout" className='register'><PersonIcon/>Logout</Link>
+    ? <Link to="/auth/logout" className='register'><PersonIcon/>Logout {username}</Link>
     : <Link to="/auth/register" className='register'><PersonIcon/>Register</Link>;
 
   return (

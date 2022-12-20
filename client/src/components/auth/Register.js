@@ -27,7 +27,8 @@ const Register = () => {
       }).then(response => {
         console.log(response);
         navigate('/loggedIn', {state: { 
-          moneyStatus: moneyData
+          moneyStatus: moneyData,
+          username: username,
         }})
       });
     } catch(e) {
