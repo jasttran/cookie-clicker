@@ -18,9 +18,8 @@ const Login = () => {
         password: password,
       }).then(response => {
         const savedData = response.data.success;
-        navigate('/', {state: { 
-          moneyStatus: savedData,
-          fromLogin: true,
+        navigate('/loggedIn', {state: { 
+          moneyStatus: savedData
         }})
       });
     } catch(e) {

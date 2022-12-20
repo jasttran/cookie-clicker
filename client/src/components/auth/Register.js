@@ -26,9 +26,8 @@ const Register = () => {
         moneyStatus: moneyStatus
       }).then(response => {
         console.log(response);
-        navigate('/', {state: { 
-          moneyStatus: moneyData,
-          fromRegister: true,
+        navigate('/loggedIn', {state: { 
+          moneyStatus: moneyData
         }})
       });
     } catch(e) {

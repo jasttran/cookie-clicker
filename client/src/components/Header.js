@@ -1,5 +1,6 @@
 import './Header.css';
 import PointerImage from '../images/pointer.png';
+import { useState } from 'react';
 
 const Header = () => {
   return (
