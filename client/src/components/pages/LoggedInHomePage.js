@@ -6,11 +6,11 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
+// Require username and moneyStatus attribute to be sent.
 const LoggedInHomePage = () => {
     const [money, setMoney] = useState(0);
     const location = useLocation();
     const username = location.state.username;
-    console.log("username: " + username)
   
     // Update starting moneyStatus to be the data saved on account logged in
     useEffect(() => {
@@ -32,7 +32,7 @@ const LoggedInHomePage = () => {
   
     return (
       <div>
-        <Navbar isLoggedIn={true} username={username} />
+        <Navbar isLoggedIn={true} username={username} moneyStatus={money} />
         <div className='homepage-container'>
             <Header className='header-box'/>
             <Cookie className='cookie-box' setMoney={setMoney} money={money}/>

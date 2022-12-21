@@ -3,7 +3,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import InfoIcon from '@mui/icons-material/Info';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ isLoggedIn, username }) => {
+const Navbar = ({ isLoggedIn, username, moneyStatus }) => {
+ 
   const loggedIcon = isLoggedIn
     ? <Link to="/auth/logout" className='register'><PersonIcon/>Logout {username}</Link>
     : <Link to="/auth/register" className='register'><PersonIcon/>Register</Link>;
@@ -12,7 +13,7 @@ const Navbar = ({ isLoggedIn, username }) => {
     <nav className="navbar">
       <Link to="/" className='kookie'>Kooki</Link>
       <ul>
-        <Link to="/about" className='about' ><InfoIcon />About</Link>
+        <Link to="/about" state={{ isLoggedIn: isLoggedIn, username: username, moneyStatus: moneyStatus }} className='about' ><InfoIcon />About</Link>
         {loggedIcon}
       </ul>
     </nav>

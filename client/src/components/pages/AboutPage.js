@@ -10,12 +10,21 @@ import login2 from '../../images/loginPhases/login2.png'
 import login3 from '../../images/loginPhases/login3.png'
 import login4 from '../../images/loginPhases/login4.png'
 import './AboutPage.css'
+import { Link, useLocation } from 'react-router-dom'
 
 const AboutPage = () => {
+  const location = useLocation();
+  const isLoggedIn = location.state.isLoggedIn;
+  const username = location.state.username;
+  const moneyStatus = location.state.moneyStatus;
+  const goBack = isLoggedIn
+    ? <Link to="/loggedIn" state={{username: username, moneyStatus: moneyStatus}}>Go Back</Link>
+    : <Link to="/">Go Back</Link>
+
   return (
     <div>
       <div className='description'>
-        <a href="/" >Go Back</a>
+        {goBack}
         <p>Please appreciate CookieClicker's glowup</p>
       </div>
       <div className='phases'>
