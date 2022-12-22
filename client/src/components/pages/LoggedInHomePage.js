@@ -11,6 +11,10 @@ const LoggedInHomePage = () => {
     const [money, setMoney] = useState(0);
     const location = useLocation();
     const username = location.state.username;
+
+    function logout() {
+        
+    }
   
     // Update starting moneyStatus to be the data saved on account logged in
     useEffect(() => {
