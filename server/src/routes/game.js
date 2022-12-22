@@ -19,7 +19,8 @@ const router = express.Router();
     const { username } = req.body;
     if (!username) res.status(400).send({ error: "username not given"})
 
-    Users.updateOne({username: username}, {$inc:{moneyStatus: 1}}).exec()
+    Users.updateOne({username: username}, {$inc:{moneyStatus: 1}}).exec();
+    console.log("updated " + username + "'s money status")
 
     res.status(200).send({ success: "incremented money status by 1" });
 });

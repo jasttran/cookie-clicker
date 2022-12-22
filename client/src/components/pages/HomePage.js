@@ -19,7 +19,7 @@ const HomePage = () => {
       <Navbar isLoggedIn={false}/>
       <div className='homepage-container'>
           <Header className='header-box'/>
-          <Cookie className='cookie-box' setMoney={setMoney} money={money}/>
+          <Cookie className='cookie-box' setMoney={setMoney} money={money} userLoggedIn={null}/>
       </div>
     </div>
   )
