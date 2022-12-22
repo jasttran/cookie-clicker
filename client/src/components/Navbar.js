@@ -5,13 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 
 const Navbar = ({ isLoggedIn, username, moneyStatus }) => {
-  const navigate = useNavigate();
-  function logout() {
-    navigate('/');
-  }
-
   const loggedIcon = isLoggedIn
-    ? <Button className='register' onClick={logout}><PersonIcon/>Logout {username}</Button>
+    ? <Link to="/" className='register'><PersonIcon/>Logout {username}</Link>
     : <Link to="/auth/register" className='register'><PersonIcon/>Register</Link>;
 
   return (
