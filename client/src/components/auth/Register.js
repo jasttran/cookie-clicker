@@ -1,12 +1,11 @@
 import axios from 'axios';
 import './Register.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 
 const Register = () => {
   const moneyData = JSON.parse(localStorage.getItem('KOOKI_MONEY_STATUS'));
-  const navigate = useNavigate();
   const [registerMsg, setRegister] = useState(null)
 
   const handleSubmit = (event) => {

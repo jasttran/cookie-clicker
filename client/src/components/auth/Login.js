@@ -1,30 +1,31 @@
 import "./Login.css";
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Login = () => {
   const navigate = useNavigate()
+  const [loginMsg, setLogin] = useState(null)
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const emailOrUsername = event.target.email.value;
     const password = event.target.password.value;
 
-    try {
-      axios.post(`${process.env.REACT_APP_URL}/auth/login`, {
-        emailOrUsername: emailOrUsername,
-        password: password,
-      }).then(response => {
-        const savedData = response.data.success;
-        const username = response.data.username;
-        navigate('/loggedIn', {state: { 
-          moneyStatus: savedData,
-          username: username,
-        }})
-      });
-    } catch(e) {
-      console.log(e);
-    }
+    axios.post(`${process.env.REACT_APP_URL}/auth/login`, {
+      emailOrUsername: emailOrUsername,
+      password: password,
+    }).then(response => {
+      const savedData = response.data.success;
+      const username = response.data.username;
+      navigate('/loggedIn', {state: { 
+        moneyStatus: savedData,
+        username: username,
+      }})
+    }).catch(error => {
+      setLogin(error.response.data.error)
+      console.log(error.response.data.error);
+    });
   }
 
 
@@ -33,6 +34,13 @@ const Login = () => {
       <Link to="/" >Go Back</Link>
        <div className="login-container">
         <p className="welcome-header">Welcome<br/>Back!</p>
+        
+        { <p style ={{
+          color: 'grey',
+          padding: 1,
+          fontStyle: 'italic'
+        }}> {loginMsg}</p>}
+
         <div className="login-form">
           <form onSubmit={handleSubmit}>
             <label> <input type="text" placeholder="Enter Email or Username" name=

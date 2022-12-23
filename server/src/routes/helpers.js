@@ -39,7 +39,7 @@ export async function register(username, emailAdd, password, moneyStatus) {
         "moneyStatus": moneyStatus,
     });
 
-    return { success: "New User created" }
+    return { success: "You have Successfully Registered!" }
 
 }
 
@@ -66,7 +66,7 @@ export async function register(username, emailAdd, password, moneyStatus) {
 
     if ((foundEmail && foundEmail.password !== getHash(password)) || 
         (foundUsername && foundUsername.password !== getHash(password)))
-        return { error: "password does not match" }
+        return { error: "incorrect password" }
 
     return foundEmail 
         ? { success: foundEmail.moneyStatus, username: foundEmail.username } 
