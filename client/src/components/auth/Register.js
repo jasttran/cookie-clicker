@@ -1,11 +1,13 @@
 import axios from 'axios';
 import './Register.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 
 const Register = () => {
   const moneyData = JSON.parse(localStorage.getItem('KOOKI_MONEY_STATUS'));
   const navigate = useNavigate();
+  const [registerMsg, setRegister] = useState(null)
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,22 +20,18 @@ const Register = () => {
       moneyStatus = moneyData;
     }
 
-    try {
-      axios.post(`${process.env.REACT_APP_URL}/auth/register`, {
-        username: username,
-        email: email,
-        password: password,
-        moneyStatus: moneyStatus
-      }).then(response => {
-        console.log(response);
-        navigate('/loggedIn', {state: { 
-          moneyStatus: moneyData,
-          username: username,
-        }})
-      });
-    } catch(e) {
-      console.log(e);
-    }
+    axios.post(`${process.env.REACT_APP_URL}/auth/register`, {
+      username: username,
+      email: email,
+      password: password,
+      moneyStatus: moneyStatus
+    }).then(response => {
+      setRegister(response.data.success)
+      console.log(response.data.success);
+    }).catch(error => {
+      setRegister(error.response.data.error)
+      console.log(error.response.data.error);
+    });
 
   }
   return (
@@ -41,6 +39,11 @@ const Register = () => {
       <Link to="/" >Go Back</Link>
        <div className="register-container">
         <p className="register-header">Sign Up</p>
+        { <p style ={{
+          color: 'grey',
+          padding: 1,
+          fontStyle: 'italic'
+        }}> {registerMsg}</p>}
         <div className="register-form">
           <form onSubmit={handleSubmit}>
             <label> <input type="text" placeholder="Create a Username" name="username"/> </label>

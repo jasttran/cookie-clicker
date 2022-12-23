@@ -1,5 +1,4 @@
 import express from 'express';
-import { register, login } from './helpers.js';
 import Users from '../usersDB.js';
 
 const router = express.Router();

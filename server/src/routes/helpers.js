@@ -1,5 +1,13 @@
 import Users from '../usersDB.js';
 import cryto from 'crypto';
+import fsPromises from 'fs';
+import path from 'path';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+
+dotenv.config();
+fsPromises.promises;
+
 
 /**
  * If valid username, email and password is given, adds the new user to the DB.
