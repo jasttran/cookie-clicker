@@ -18,10 +18,10 @@ fsPromises.promises;
  * @param {string} password
  * @param {number} moneyStatus
  * 
- * Returns {error: string} on any conditions: 
+ * @returns {error: string} on any conditions: 
  *      - username, email or password not given
  *      - email or username already registered
- * Returns {success: string} on success
+ * @returns {success: string} on success
  */
 export async function register(username, emailAdd, password, moneyStatus) {
     if (!username || !emailAdd || !password) return { error: "username, email or password not given"};
@@ -40,7 +40,6 @@ export async function register(username, emailAdd, password, moneyStatus) {
     });
 
     return { success: "You have Successfully Registered!" }
-
 }
 
 
@@ -56,23 +55,57 @@ export async function register(username, emailAdd, password, moneyStatus) {
  *      - email/username registered but incorrect password
  * Returns {success: moneyStatus, username: String} on success
  */
- export async function login(emailOrUsername, password) {
-    if (!emailOrUsername || !password) return { error: "email/username or password not given"};
+export async function login(emailOrUsername, password) {
+    const res = await checkValidLogin(emailOrUsername, password);
+    if (res.error !== undefined) return res;
 
-    const foundEmail = await Users.findOne({ email: emailOrUsername }).exec();
-    const foundUsername = await Users.findOne({ username: emailOrUsername }).exec();
+    const foundUser = res.foundUser;
 
-    if (!foundEmail && !foundUsername) return { error: "email/username not registered"};
+    const accessToken = jwt.sign(
+        { "username": foundUser.username },
+        process.env.ACCESS_TOKEN_SECRET,
+        { expiresIn: '30s' }
+    );
 
-    if ((foundEmail && foundEmail.password !== getHash(password)) || 
-        (foundUsername && foundUsername.password !== getHash(password)))
-        return { error: "incorrect password" }
+    const refreshToken = jwt.sign(
+        { "username": res.username },
+        process.env.REFRESH_TOKEN_SECRET,
+        { expiresIn: '1d' }
+    );
+    
 
-    return foundEmail 
-        ? { success: foundEmail.moneyStatus, username: foundEmail.username } 
-        : { success: foundUsername.moneyStatus, username: foundUsername.username }
+    return {success: foundUser.moneyStatus, username: foundUser.username};
+
 }
 
+/**
+ * Checks if valid email/username and matching password is given.
+ *
+ * @param {string} emailOrUsername
+ * @param {string} password
+ * 
+ * Returns {error: string} on any conditions: 
+ *      - no email/username or password given
+ *      - email/username not registered
+ *      - email/username registered but incorrect password
+ * Returns { foundUser: foundUser }
+ */
+export async function checkValidLogin(emailOrUsername, password) {
+    if (!emailOrUsername || !password) return { error: "email/username or password not given"};
+
+    const foundUser = await Users.findOne({ email: emailOrUsername }).exec() || await Users.findOne({ username: emailOrUsername }).exec();
+
+    if (!foundUser) return { error: "email/username not registered"};
+    if (foundUser.password !== getHash(password)) return { error: "incorrect password" };
+
+    return { foundUser: foundUser }
+}
+
+/**
+ * Creates a hash of given string
+ * @param   {string} plaintext 
+ * @returns {string} hashed plaintext
+ */
 function getHash(plaintext) {
     return cryto.createHash('sha256').update(plaintext).digest('hex')
 }
