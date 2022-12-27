@@ -1,6 +1,5 @@
 import express from 'express';
 import Users from '../usersDB.js';
-
 const router = express.Router();
 
 

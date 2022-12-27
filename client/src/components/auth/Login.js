@@ -16,11 +16,9 @@ const Login = () => {
       emailOrUsername: emailOrUsername,
       password: password,
     }).then(response => {
-      const savedData = response.data.success;
-      const username = response.data.username;
       navigate('/loggedIn', {state: { 
-        moneyStatus: savedData,
-        username: username,
+        moneyStatus: response.data.moneyStatus,
+        username: response.data.username,
       }})
     }).catch(error => {
       setLogin(error.response.data.error)

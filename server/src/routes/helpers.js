@@ -1,12 +1,7 @@
 import Users from '../usersDB.js';
 import cryto from 'crypto';
-import fsPromises from 'fs';
-import path from 'path';
-import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-
 dotenv.config();
-fsPromises.promises;
 
 
 /**
@@ -53,44 +48,9 @@ export async function register(username, emailAdd, password, moneyStatus) {
  *      - no email/username or password given
  *      - email/username not registered
  *      - email/username registered but incorrect password
- * Returns {success: moneyStatus, username: String} on success
+ * Returns { foundUser: foundUser } on success
  */
 export async function login(emailOrUsername, password) {
-    const res = await checkValidLogin(emailOrUsername, password);
-    if (res.error !== undefined) return res;
-
-    const foundUser = res.foundUser;
-
-    const accessToken = jwt.sign(
-        { "username": foundUser.username },
-        process.env.ACCESS_TOKEN_SECRET,
-        { expiresIn: '30s' }
-    );
-
-    const refreshToken = jwt.sign(
-        { "username": res.username },
-        process.env.REFRESH_TOKEN_SECRET,
-        { expiresIn: '1d' }
-    );
-    
-
-    return {success: foundUser.moneyStatus, username: foundUser.username};
-
-}
-
-/**
- * Checks if valid email/username and matching password is given.
- *
- * @param {string} emailOrUsername
- * @param {string} password
- * 
- * Returns {error: string} on any conditions: 
- *      - no email/username or password given
- *      - email/username not registered
- *      - email/username registered but incorrect password
- * Returns { foundUser: foundUser }
- */
-export async function checkValidLogin(emailOrUsername, password) {
     if (!emailOrUsername || !password) return { error: "email/username or password not given"};
 
     const foundUser = await Users.findOne({ email: emailOrUsername }).exec() || await Users.findOne({ username: emailOrUsername }).exec();
@@ -99,6 +59,7 @@ export async function checkValidLogin(emailOrUsername, password) {
     if (foundUser.password !== getHash(password)) return { error: "incorrect password" };
 
     return { foundUser: foundUser }
+
 }
 
 /**

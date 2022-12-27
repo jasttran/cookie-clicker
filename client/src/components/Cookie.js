@@ -2,8 +2,10 @@ import ChocChip from '../images/choc-chip.png';
 import './Cookie.css';
 import Halo from '../images/halo.png';
 import axios from 'axios';
+import popNoise from '../images/popNoise.mp3'
 
 const Cookie = ({ userLoggedIn, setMoney, money }) => {
+
   function updateDB() {
      // update database everytime cookie is clicked and money is gained
      try {
@@ -22,6 +24,11 @@ const Cookie = ({ userLoggedIn, setMoney, money }) => {
     if (userLoggedIn) {
       updateDB()
     }
+    popSound()
+  }
+
+  function popSound() {
+    new Audio(popNoise).play();
   }
 
   return (

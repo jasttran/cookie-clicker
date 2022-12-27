@@ -5,6 +5,7 @@ import game from './routes/game.js';
 import mongoose from 'mongoose';
 import connectDB from './dbConn.js';
 import dotenv from 'dotenv';
+import verifyJWT from './middleware/verifyJWT.js';
 
 mongoose.set('strictQuery', true);
 dotenv.config();
@@ -17,9 +18,10 @@ connectDB(); // Connect to MongoDB
 app.use(express.json()); // built-in middleware for json
 app.use(cors()); // cross origin resource sharing
 
-// route any request coming for the /login to the router, instead of the 
-// other routes below. require the router we have created
 app.use('/auth', auth);
+
+//TODO fix toekns, currently unauthorised when /game is called
+//app.use(verifyJWT) // all routes after this line will use the verifiedJWT middleware
 app.use('/game', game);
 
 mongoose.connection.once('open', () => {
