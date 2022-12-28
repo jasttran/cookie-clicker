@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 
+
 const Register = () => {
   const moneyData = JSON.parse(localStorage.getItem('KOOKI_MONEY_STATUS'));
   const [registerMsg, setRegister] = useState(null)

@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Cookie from '../../components/Cookie';
 import Navbar from '../../components/Navbar';
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import manyCookies from '../../images/many-cookies.png';
 
 const HomePage = () => {
   const [money, setMoney] = useState(0);

@@ -14,8 +14,8 @@
 
 .cookie-image {
     position: absolute;
-    top: 160px;
-    left: 170px;
+    top: 195px;
+    left: 165px;
     width: 260px;
     cursor: pointer;
 }
@@ -47,7 +47,6 @@
     }
 }
 
-
 @keyframes bounce {
     from {
         transform: scale(1,1);
@@ -56,5 +55,3 @@
         transform: scale(0.95,0.95);
     }
 }
-
-#demo { animation: bounce 0.8s infinite alternate; }

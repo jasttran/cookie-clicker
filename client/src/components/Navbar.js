@@ -7,7 +7,7 @@ const Navbar = ({ isLoggedIn, username, moneyStatus }) => {
   const loggedIcon = isLoggedIn
     ? <Link to="/" className='register'><PersonIcon/>Logout {username}</Link>
     : <Link to="/auth/register" className='register'><PersonIcon/>Register</Link>;
-
+  
   return (
     <nav className="navbar">
       <Link to="/" className='kookie'>Kooki</Link>

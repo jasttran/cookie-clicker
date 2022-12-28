@@ -3,7 +3,6 @@ import cryto from 'crypto';
 import dotenv from 'dotenv';
 dotenv.config();
 
-
 /**
  * If valid username, email and password is given, adds the new user to the DB.
  * Assumes moneyStatus >= 0.
@@ -22,10 +21,10 @@ export async function register(username, emailAdd, password, moneyStatus) {
     if (!username || !emailAdd || !password) return { error: "username, email or password not given"};
 
     const duplicateEmail = await Users.findOne({ email: emailAdd }).exec();
-    if (duplicateEmail) return { error: "email already exists "};
+    if (duplicateEmail) return { error: "email taken"};
 
     const duplicateUsername = await Users.findOne({ username: username }).exec();
-    if (duplicateUsername) return { error: "username already exists "};
+    if (duplicateUsername) return { error: "username taken"};
 
     const res = await Users.create ({
         "username": username,

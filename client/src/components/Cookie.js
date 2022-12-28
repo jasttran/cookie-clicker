@@ -2,7 +2,8 @@ import ChocChip from '../images/choc-chip.png';
 import './Cookie.css';
 import Halo from '../images/halo.png';
 import axios from 'axios';
-import popNoise from '../images/popNoise.mp3'
+import popNoise from '../images/popNoise.mp3';
+
 
 const Cookie = ({ userLoggedIn, setMoney, money }) => {
 
@@ -33,10 +34,10 @@ const Cookie = ({ userLoggedIn, setMoney, money }) => {
 
   return (
     <div className='cookie-container'>
+        <p>{money}</p>
         <img className='halo-image' draggable={false} src={Halo} />
         <img className='cookie-image' draggable={false} src={ChocChip}
          onClick={incrementCount}/>
-        <p>{money}</p>
     </div>
   )
 }
