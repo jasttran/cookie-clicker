@@ -2,7 +2,6 @@
     position: relative;
     top: 0;
     left: 0;
-    border: 1px solid red;
     text-align: center;
 }
 
@@ -10,7 +9,7 @@
     animation: halo-image-spin infinite 40s linear;
     position: relative;
     width: 580px;
-    top: -97px;
+    top: -25px;
     left: 0;
 }
 
@@ -31,9 +30,17 @@
 }
 
 .money-status {
-    font-size: 42px;
-    padding-bottom: 45px;
+    font-size: 35px;
+    color: rgba(255, 255, 255, 0.872);
+
+    padding: 20px 0px;
+    margin: 20px 100px;
+    background-color: rgb(213, 124, 72);
+    border-radius: 10px;
+    background-image: url("../images/money-status-bg.png");
+    background-size: cover;
 }
+
 
 @keyframes hoverEnlargeCookie {
     from {

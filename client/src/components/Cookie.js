@@ -33,7 +33,7 @@ const Cookie = ({ userLoggedIn, setMoney, money }) => {
 
   return (
     <div className='cookie-container'>
-        <p className='money-status'>{money}</p>
+        <p className='money-status'>{money} cookies</p>
         <img className='halo-image' draggable={false} src={Halo} />
         <img className='cookie-image' draggable={false} src={ChocChip}
          onClick={incrementCount}/>
