@@ -6,7 +6,6 @@ import popNoise from '../images/popNoise.mp3';
 
 
 const Cookie = ({ userLoggedIn, setMoney, money }) => {
-
   function updateDB() {
      // update database everytime cookie is clicked and money is gained
      try {
@@ -34,7 +33,7 @@ const Cookie = ({ userLoggedIn, setMoney, money }) => {
 
   return (
     <div className='cookie-container'>
-        <p>{money}</p>
+        <p className='money-status'>{money}</p>
         <img className='halo-image' draggable={false} src={Halo} />
         <img className='cookie-image' draggable={false} src={ChocChip}
          onClick={incrementCount}/>

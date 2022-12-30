@@ -2,19 +2,21 @@
     position: relative;
     top: 0;
     left: 0;
+    border: 1px solid red;
+    text-align: center;
 }
 
 .halo-image {
     animation: halo-image-spin infinite 40s linear;
     position: relative;
     width: 580px;
-    top: 0;
+    top: -97px;
     left: 0;
 }
 
 .cookie-image {
     position: absolute;
-    top: 195px;
+    top: 232px;
     left: 165px;
     width: 260px;
     cursor: pointer;
@@ -24,9 +26,13 @@
     animation: hoverEnlargeCookie 0.1s linear 0s 1 forwards;
 }
 
-
 .cookie-image:active {
     animation: bounce 0.1s linear 0s 1 forwards;
+}
+
+.money-status {
+    font-size: 42px;
+    padding-bottom: 45px;
 }
 
 @keyframes hoverEnlargeCookie {
