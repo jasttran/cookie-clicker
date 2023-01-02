@@ -1,0 +1,15 @@
+
+#signpost {
+    position: relative;
+}
+
+#signpost-text {
+    position: absolute;
+    top: -138px;
+    left: 100px;
+}
+#signpost-img {
+    position: absolute;
+    top: -250px;
+    width: 250px;
+}

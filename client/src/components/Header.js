@@ -1,10 +1,11 @@
 import './Header.css';
 import PointerImage from '../images/pointer.png';
-import { useState } from 'react';
+import ShopSignPost from './SignPost';
 
 const Header = () => {
   return (
     <div className='header'>
+        <ShopSignPost />
         <span className='text-cookie'>Cookie</span>
         <span className='text-clicker'> Clicker</span>
         <div className='text-description'><p>Click it... I dare you</p></div>

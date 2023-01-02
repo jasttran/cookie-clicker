@@ -33,6 +33,7 @@
     animation: point-at-cookie infinite 10s linear;
 }
 
+
 @keyframes point-at-cookie {
     0% {
 		transform: translate(0, 0);
