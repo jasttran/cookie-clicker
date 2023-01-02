@@ -1,13 +1,18 @@
 
 #signpost {
     position: relative;
+    cursor: pointer;
 }
 
 #signpost-text {
     position: absolute;
-    top: -138px;
-    left: 100px;
+    top: -145px;
+    left: 87px;
+    font-size: 31px;
+    font-weight: 600;
+    color: rgb(93, 40, 5);
 }
+
 #signpost-img {
     position: absolute;
     top: -250px;
