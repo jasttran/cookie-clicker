@@ -16,9 +16,7 @@ const app = express();
 connectDB(); // Connect to MongoDB
 
 app.use(express.json()); // built-in middleware for json
-app.use(cors({
-    origin: ["http://localhost:3001", "https://jasttran-cookie-clicker.onrender.com"],
-})); // cross origin resource sharing
+app.use(cors()); // cross origin resource sharing
 
 app.use('/auth', auth);
 
