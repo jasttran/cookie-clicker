@@ -18,6 +18,10 @@ connectDB(); // Connect to MongoDB
 app.use(express.json()); // built-in middleware for json
 app.use(cors()); // cross origin resource sharing
 
+app.get('/', (req, res) => {
+    res.send('hello world')
+})
+
 app.use('/auth', auth);
 
 //TODO fix toekns, currently unauthorised when /game is called
