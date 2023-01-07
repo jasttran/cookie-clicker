@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"node src/server.js\" \"npm --prefix ../client install ../client && npm start --prefix ../client\"",
+    "start": "node src/server.js",
     "dev": "nodemon server"
   },
   "keywords": [],
