@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.js",
+    "start": "concurrently \"node src/server.js\" \"cd ../client && npm install && npm start\"",
     "dev": "nodemon server"
   },
   "keywords": [],
@@ -22,6 +22,7 @@
     "mongoose": "^6.8.0"
   },
   "devDependencies": {
+    "concurrently": "^7.6.0",
     "nodemon": "^2.0.20"
   }
 }
