@@ -3,8 +3,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
-  background: linear-gradient(#f6e8cf, #f4c26c);
+  background:            linear-gradient( rgb(244, 227, 183), rgb(233, 176, 114));
+  background-attachment: fixed;
 }
 
 code {
