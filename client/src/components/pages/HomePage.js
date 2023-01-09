@@ -1,6 +1,6 @@
 
 import './HomePage.css';
-import Header from '../../components/Header';
+import Header from '../shop/Header';
 import Cookie from '../../components/Cookie';
 import Navbar from '../../components/Navbar';
 import { useState, useEffect } from 'react';

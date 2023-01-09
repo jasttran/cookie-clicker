@@ -6,7 +6,7 @@
 
 #signpost-text {
     position: absolute;
-    top: -145px;
+    top: 55px;
     left: 87px;
     font-size: 31px;
     font-weight: 600;
@@ -15,9 +15,9 @@
 
 #signpost-img {
     position: absolute;
-    top: -250px;
+    top: -50px;
     width: 250px;
 }
 
-/*cut image of signpost in half, only board is skewed. Then animate onhover or 
+/*cut image of signpost in half, only board is skewed. Then animate onhover or
 infinite loop*/
